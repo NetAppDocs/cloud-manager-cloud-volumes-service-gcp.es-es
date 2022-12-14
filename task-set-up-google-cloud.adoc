@@ -1,0 +1,71 @@
+---
+sidebar: sidebar 
+permalink: task-set-up-google-cloud.html 
+keywords: setup, set up, api, service account, requirements, permissions 
+summary: BlueXP necesita acceso a la API de Cloud Volumes Service y los permisos adecuados a través de una cuenta de servicio de Google Cloud. 
+---
+= Configure Google Cloud
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+BlueXP necesita acceso a la API de Cloud Volumes Service y los permisos adecuados a través de una cuenta de servicio de Google Cloud.
+
+
+
+== Habilite la API de Cloud Volumes Service
+
+En Google Cloud Shell, ejecute el siguiente comando para habilitar la API de Cloud Volumes Service:
+
+`gcloud --project=<my-cvs-project> services enable cloudvolumesgcp-api.netapp.com`
+
+
+
+== Configure una cuenta de servicio
+
+Complete las siguientes tareas para que BlueXP pueda acceder a su proyecto de Google Cloud:
+
+* Cree una nueva cuenta de servicio
+* Agregue el nuevo miembro de la cuenta de servicio al proyecto y. asignar roles específicos de ti (permisos)
+* Cree y descargue un par de claves para la cuenta de servicio Que se utiliza para autenticar en Google
+
+
+.Pasos
+. En la consola de Google Cloud, https://console.cloud.google.com/iam-admin/serviceaccounts["Vaya a la página de cuentas de servicio"^].
+. Haga clic en *Seleccionar un proyecto*, elija su proyecto y haga clic en *Abrir*.
+. Haga clic en *Crear cuenta de servicio*.
+. Introduzca el nombre de la cuenta de servicio (nombre descriptivo para mostrar) y la descripción.
++
+La consola de cloud genera un ID de cuenta de servicio en función de este nombre. Edite el ID si es necesario. No puede cambiar el ID más adelante.
+
+. Para establecer los controles de acceso ahora, haga clic en *Crear* y, a continuación, en *HECHO* en la parte inferior de la página y continúe con el siguiente paso.
+. En la página _IAM_ haga clic en *Agregar* y rellene los campos de la página _Add Members_:
++
+.. En el campo nuevos miembros, introduzca el ID de cuenta de servicio completo, por ejemplo, user1-service-account-cvs@project1.iam.gserviceaccount.com.
+.. Añada estos roles:
++
+*** _NetApp Cloud Volumes Admin_
+*** _Visor de redes de computación_
+
+
+.. Haga clic en *Guardar*.
+
+
+. Haga clic en el nombre de la cuenta de servicio y, a continuación, en la página _Service account details_ (Detalles de la cuenta de servicio), haga clic en *Agregar clave > Crear nueva clave*.
+. Seleccione *JSON* como el tipo de clave y haga clic en *Crear*.
++
+Al hacer clic en *Crear* se genera y descarga en el sistema su nuevo par de claves públicas/privadas. Sirve como la única copia de la clave privada. Almacene este archivo de forma segura porque puede utilizarse para autenticarse como cuenta de servicio.
+
+
+
+Si quiere ver los pasos detallados, consulte la documentación de Google Cloud:
+
+* link:https://cloud.google.com/iam/docs/creating-managing-service-accounts["Crear y administrar cuentas de servicio"^]
+* link:https://cloud.google.com/iam/docs/granting-changing-revoking-access["Otorgar, cambiar y revocar el acceso a los recursos"^]
+* link:https://cloud.google.com/iam/docs/creating-managing-service-account-keys["Crear y administrar claves de cuenta de servicio"^]
+

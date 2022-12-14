@@ -1,0 +1,62 @@
+---
+sidebar: sidebar 
+permalink: task-create-working-env.html 
+keywords: cloud volumes service for gcp, google cloud, cloud volumes, create cloud volumes, discover cloud volumes service for gcp, cloud volumes service subscription, discover cloud volumes service subscription, discover region, allowed clients, create snapshots 
+summary: Cree un entorno de trabajo de Cloud Volumes Service para Google Cloud en BlueXP para crear y gestionar volúmenes y snapshots. 
+---
+= Crear un entorno de trabajo de Cloud Volumes Service para Google Cloud
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cree un entorno de trabajo de Cloud Volumes Service para Google Cloud en BlueXP para que pueda crear y gestionar volúmenes y snapshots.
+
+Independientemente de si ya ha creado volúmenes desde Google Cloud Console, o si acaba de suscribirse a Cloud Volumes Service para Google Cloud y no tiene volúmenes todavía, el primer paso es crear un entorno de trabajo para los volúmenes basado en su suscripción de GCP.
+
+Si Cloud Volumes ya existen para esta suscripción, los volúmenes aparecerán en el nuevo entorno de trabajo. Si todavía no ha añadido ningún volumen de cloud para la suscripción a GCP, podrá hacerlo después de crear el nuevo entorno de trabajo.
+
+
+TIP: Si tiene suscripciones y volúmenes en varios proyectos de Google Cloud, debe realizar esta tarea para cada proyecto.
+
+.Antes de empezar
+Debe disponer de la siguiente información al agregar una suscripción a cada proyecto:
+
+* Credenciales de cuenta de servicio (clave privada JSON que ha descargado)
+* Nombre del proyecto
+
+
+.Pasos
+. En BlueXP, agregue un nuevo entorno de trabajo, seleccione la ubicación *Google Cloud* y haga clic en *continuar*.
+. Seleccione *Cloud Volumes Service* y haga clic en *continuar*.
++
+image:screenshot_add_cvs_gcp_working_env.png["Captura de pantalla de la adición de un entorno de trabajo para una suscripción a Cloud Volumes Service para GCP."]
+
+. Proporcione información sobre su suscripción a Cloud Volumes Service:
++
+.. Introduzca el nombre del entorno de trabajo que desee utilizar.
+.. Copie y pegue la clave privada JSON que ha descargado en los pasos anteriores.
+.. Seleccione el nombre de su proyecto de Google Cloud.
+.. Haga clic en *continuar*.
++
+image:screenshot_add_cvs_gcp_credentials.png["Captura de pantalla de la adición de credenciales para una suscripción a Cloud Volumes Service para GCP."]
+
+
+
+
+
+.Resultado
+BlueXP muestra su entorno de trabajo de Cloud Volumes Service para Google Cloud.
+
+image:screenshot_cvs_gcp_cloud.png["Una captura de pantalla del entorno de trabajo de Cloud Volumes Service para Google Cloud."]
+
+Si Cloud Volumes ya existen para esta suscripción, los volúmenes aparecen en el nuevo entorno de trabajo. Puede añadir volúmenes de cloud adicionales de BlueXP.
+
+Si no hay Cloud Volumes para esta suscripción, créelos ahora.
+
+.El futuro
+link:task-create-volumes.html["Comience a crear volúmenes"].

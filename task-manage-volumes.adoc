@@ -1,0 +1,83 @@
+---
+sidebar: sidebar 
+permalink: task-manage-volumes.html 
+keywords: manage volumes, mount command, delete volume, edit volume, edit snapshot policy 
+summary: Puede gestionar los volúmenes existentes a medida que cambien sus necesidades de almacenamiento. Es posible ver, editar, restaurar y eliminar volúmenes. 
+---
+= Gestione los volúmenes existentes
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puede gestionar los volúmenes existentes a medida que cambien sus necesidades de almacenamiento. Es posible ver, editar, restaurar y eliminar volúmenes.
+
+.Pasos
+. Abra el entorno de trabajo.
+. Pase el ratón sobre el volumen.
++
+image:screenshot_cvs_gcp_volume_hover_menu.png["Captura de pantalla del menú de desplazamiento de volumen que le permite para realizar tareas de volumen"]
+
+. Gestione sus volúmenes:
++
+[cols="30,70"]
+|===
+| Tarea | Acción 
+
+
+| Permite ver la información de un volumen | Haga clic en *Info*. 
+
+
+| Editar un volumen (incluida la política de Snapshot)  a| 
+.. Haga clic en *Editar*.
+.. Modifique las propiedades del volumen y haga clic en *Actualizar*.
+
+
+
+
+| Obtenga el comando de montaje NFS o SMB  a| 
+.. Haga clic en *montar el volumen*.
+.. Haga clic en *Copiar* para copiar los comandos.
+
+
+
+
+| Cree una copia Snapshot bajo demanda  a| 
+.. Haga clic en *Crear una copia Snapshot*.
+.. Si es necesario, cambie el nombre y, a continuación, haga clic en *Crear*.
+
+
+
+
+| Reemplace el volumen por el contenido de una copia Snapshot  a| 
+.. Haga clic en *revertir volumen a instantánea*.
+.. Seleccione una copia Snapshot y haga clic en *Restaurar*.
+
+
+
+
+| Eliminar una copia Snapshot  a| 
+.. Haga clic en *Eliminar una copia Snapshot*.
+.. Seleccione la instantánea y haga clic en *Eliminar*.
+.. Haga clic en *Eliminar* de nuevo cuando se le solicite confirmar.
+
+
+
+
+| Eliminar un volumen  a| 
+.. Desmonte el volumen de todos los clientes:
++
+*** En los clientes Linux, utilice `umount` comando.
+*** En clientes Windows, haga clic en *desconectar unidad de red*.
+
+
+.. Seleccione un volumen y, a continuación, haga clic en *Eliminar*.
+.. Vuelva a hacer clic en *Eliminar* para confirmar.
+
+
+|===
+
