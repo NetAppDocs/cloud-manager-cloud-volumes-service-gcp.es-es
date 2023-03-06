@@ -31,11 +31,9 @@ Debe disponer de la siguiente información al agregar una suscripción a cada pr
 
 
 .Pasos
-. En BlueXP, agregue un nuevo entorno de trabajo, seleccione la ubicación *Google Cloud* y haga clic en *continuar*.
-. Seleccione *Cloud Volumes Service* y haga clic en *continuar*.
-+
-image:screenshot_add_cvs_gcp_working_env.png["Captura de pantalla de la adición de un entorno de trabajo para una suscripción a Cloud Volumes Service para GCP."]
-
+. En el menú de navegación de BlueXP, seleccione *almacenamiento > Canvas*.
+. En la página Canvas, haga clic en *Agregar entorno de trabajo* y seleccione *Google Cloud Platform*.
+. Junto a Cloud Volumes Service, seleccione *descubrir*.
 . Proporcione información sobre su suscripción a Cloud Volumes Service:
 +
 .. Introduzca el nombre del entorno de trabajo que desee utilizar.
